@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aryan Singh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="frame no-cam" id="frame">
+      <div class="stage" id="stage">
+        <video id="cam" autoplay playsinline muted></video>
+        <canvas id="overlay" aria-hidden="true"></canvas>
+        <span class="pip-chip" aria-hidden="true">✊ close · drag to move</span>
+      </div>
+
+      <header class="hero">
+        <p class="eyebrow">Portfolio &amp; Selected Work</p>
+        <h1>Aryan Singh<br />Frontend Engineer</h1>
+      </header>
+
+      <div class="status">
+        <span class="dot"></span>
+        <span id="status">Requesting camera…</span>
+        <button id="start-btn" hidden>Enable camera</button>
+      </div>
+
+      <div class="guide" aria-hidden="true">
+        <span>🤏 Pinch to open</span>
+        <span>✊ Close</span>
+      </div>
+
+      <nav class="cards" id="cards" aria-label="Sections"></nav>
+
+      <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+
+      <div class="arrows">
+        <button id="prev" aria-label="Previous section">
+          <svg viewBox="0 0 24 24"><path d="M14.5 6 8.5 12l6 6" /></svg>
+        </button>
+        <button id="next" aria-label="Next section">
+          <svg viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6" /></svg>
+        </button>
+      </div>
+
+      <div class="reader" id="reader" role="dialog" aria-modal="true" aria-label="Detail page" hidden></div>
+    </main>
+
+    <div class="hand-cursor" id="hand-cursor" aria-hidden="true"><b></b><i></i></div>
+
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
