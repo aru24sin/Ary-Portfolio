@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gesture Portfolio — Aryan Singh</title>
+    <meta name="description" content="Case study: a portfolio you browse with your hands. Webcam hand tracking in the browser, and what it taught me about designing input for noisy signals." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=8" />
+    <style>:root { --accent: #9a5b2e; }</style>
+  </head>
+  <body>
+    <a class="skip" href="#study">Skip to case study</a>
+
+    <nav class="nav" aria-label="Main">
+      <div class="wrap">
+        <a class="brand" href="index.html"><i>A</i>Aryan Singh</a>
+        <div class="nav-links">
+          <a href="index.html#work" aria-current="page">Work</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#about">About</a>
+          <a class="btn small" href="index.html#contact">Get in touch</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="cs-hero">
+      <div class="wrap">
+        <a class="back" href="index.html#work">← All work</a>
+        <div class="mono">Case study 03 · 2026 · Personal project</div>
+        <h1 class="serif" style="view-transition-name: title-gesture">Gesture Portfolio</h1>
+        <p class="hook">It worked perfectly on my Mac, and nowhere else.</p>
+        <p class="lede">My previous portfolio, browsed with your hands through a webcam. It runs entirely in the browser.</p>
+        <div class="cs-links">
+          <a class="btn" href="../1/index.html">Try it with your camera <span class="arrow">↗</span></a>
+        </div>
+        <div class="cover gesture">
+          <img src="images/gesture/card.jpg" alt="The gesture portfolio home screen" />
+        </div>
+        <div class="meta" style="margin-top: 0; border-top: 0"><div><span class="mono">Role</span><ul><li>Interaction designer, developer</li></ul></div><div><span class="mono">Team</span><ul><li>Solo, with AI pair-programming</li></ul></div><div><span class="mono">Timeline</span><ul><li>September 2026</li></ul></div><div><span class="mono">Tools</span><ul><li>MediaPipe, JavaScript, Web Animations</li></ul></div></div>
+      </div>
+    </header>
+
+    <main class="cs" id="study">
+      <div class="wrap">
+        <section class="block reveal">
+          <div class="mono"><b>Problem</b>Why it matters</div>
+          <div>
+            <h2>Portfolios describe interaction design. I wanted mine to be one.</h2>
+            <p class="lead">A hand in front of a webcam is a noisy input: it jitters, flickers, and runs differently on every computer. <strong>Could it feel as dependable as a mouse?</strong></p>
+          </div>
+        </section>
+        <section class="block reveal" id="final">
+          <div class="mono"><b>Final product</b>How it works</div>
+          <div>
+            <h2>Five poses, a pinch and a fist.</h2>
+            <div class="vocab">
+              <div><b>✌️</b><span>About</span></div>
+              <div><b>👍</b><span>Case studies</span></div>
+              <div><b>☝️</b><span>Experience</span></div>
+              <div><b>🖐️</b><span>Toolkit</span></div>
+              <div><b>🤟</b><span>Contact</span></div>
+              <div><b>🤏</b><span>Click / scroll</span></div>
+              <div><b>✊</b><span>Close</span></div>
+            </div>
+            <div class="wide pair">
+              <figure><img src="images/gesture/card.jpg" alt="Home with the Case Studies card open" loading="lazy" /><figcaption>A held pose opens its card</figcaption></figure>
+              <figure><img src="images/gesture/reader.jpg" alt="Case study page" loading="lazy" /><figcaption>A pinch opens the full page</figcaption></figure>
+            </div>
+            <p class="note">Shown with the camera off. With it on, live video fills the background.</p>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 01</b>Intent</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Make people mean it.</h2>
+                <p class="lead">A pose must be held for 0.65 seconds, with a progress bar, and fires once. A hand passing through a thumbs-up opens nothing.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Acting on the first frame</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/gesture/card.jpg" alt="A card opened by a held pose" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 02</b>Precision</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>A pinch that doesn't stutter.</h2>
+                <p class="lead">A pinch starts at one finger distance and ends at a wider one, so trembling fingertips can't double-click.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>A single on/off threshold</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/gesture/reader.jpg" alt="Reader page opened by a pinch" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 03</b>Reach</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Design for the slowest laptop.</h2>
+                <p class="lead">It worked on my Mac and nowhere else. I reproduced the failure at low frame rates, fixed the timing, and kept <strong>mouse and keyboard as fallbacks.</strong></p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Tuning it on one fast machine</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/gesture/experience.jpg" alt="Experience page" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Impact</b>Results</div>
+          <div>
+            <div class="impact"><div><b>2–4 fps</b><span>is now enough for a gesture</span></div><div><b>0</b><span>servers, all in-browser</span></div><div><b>3</b><span>ways in: hand, mouse, keys</span></div></div>
+            <p class="lead" style="margin-top: 22px"><strong>It taught me to design for input that is wrong some of the time, which is true of every camera, microphone and model.</strong></p>
+            <p class="note">No analytics on this site. The fix was verified in a simulation, not yet on a real slow laptop.</p>
+          </div>
+        </section>
+        <section class="block reveal" style="border-bottom: 0">
+          <div class="mono"><b>Reflection</b>What I learned</div>
+          <div>
+            <p class="lead"><strong>I tested it on the best computer it would ever run on.</strong> Now I slow things down on purpose before anyone else opens them.</p>
+          </div>
+        </section>
+
+        <aside class="takeaway reveal">
+          <div class="mono">Key takeaway</div>
+          <h2>I design for the slowest laptop in the room.</h2>
+          <p>Ambitious interaction only counts if it holds up on someone else's machine, with a fallback for the people it doesn't reach.</p>
+        </aside>
+      </div>
+    </main>
+
+    <section class="next">
+      <div class="wrap">
+        <a href="frogwatch.html">
+          <div class="mono">Next case study</div>
+          <h2 class="serif">Frogwatch <span class="arrow">↗</span></h2>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" style="padding: 0">
+      <div class="contact" style="--glow: #b08a5e">
+        <div class="mono">Contact</div>
+        <h2 class="serif">Let's make something that ships.</h2>
+        <a class="mail" href="mailto:aru24sin@gmail.com">aru24sin@gmail.com</a>
+      </div>
+    </section>
+    <footer>
+      <div class="wrap">
+        <span>© <span data-year>2026</span> Aryan Singh</span>
+        <a href="index.html">Back to home</a>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="interactions.js?v=3"></script>
+  </body>
+</html>

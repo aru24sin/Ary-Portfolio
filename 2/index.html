@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aryan Singh — Product Designer &amp; Developer</title>
+    <meta name="description" content="Aryan Singh is a product designer who builds what he designs: user research, Figma prototypes and design systems, shipped in React, TypeScript and Swift." />
+    <meta property="og:title" content="Aryan Singh — Product Designer & Developer" />
+    <meta property="og:description" content="Product designer who builds what I design. Case studies: Frogwatch, Sfumo and a gesture-controlled portfolio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=8" />
+    <script>
+      // Decide before first paint whether the intro plays (once per session, never with reduced motion).
+      try {
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !sessionStorage.getItem("intro-seen")) {
+          document.documentElement.classList.add("intro");
+          history.scrollRestoration = "manual"; // the intro always starts at the top
+          setTimeout(function () { document.documentElement.classList.remove("intro"); }, 6000); // failsafe
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#work">Skip to work</a>
+
+    <nav class="nav" aria-label="Main">
+      <div class="wrap">
+        <a class="brand" href="#top"><i>A</i>Aryan Singh</a>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#about">About</a>
+          <a class="btn small" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="wrap">
+        <div class="status mono"><i></i>Open to new opportunities</div>
+        <h1 class="serif">Product designer who <em>builds</em> what I design.</h1>
+        <div class="hero-foot">
+          <p>
+            I design products end to end, from user interviews and usability tests to Figma prototypes and design
+            systems, and I build them in React, TypeScript and Angular. Currently at
+            <strong>AAA's ACG AI Labs</strong>.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#work">View my work <span class="arrow">↓</span></a>
+            <a class="btn quiet" href="resume.pdf" download="Aryan-Singh-Resume.pdf">Résumé</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="facts">
+      <div class="wrap">
+        <div><span class="mono">Now</span><b>Applications Associate, ACG AI Labs</b></div>
+        <div><span class="mono">Based in</span><b>Detroit, Michigan</b></div>
+        <div><span class="mono">Education</span><b>B.S. Computer Science (AI), UM–Dearborn</b></div>
+        <div><span class="mono">Latest</span><b>Shipped Sfumo for macOS, Oct 2026</b></div>
+      </div>
+    </div>
+
+    <main>
+      <section id="work">
+        <div class="wrap">
+          <div class="head reveal">
+            <div>
+              <div class="mono">Selected work</div>
+              <h2 class="serif">Three projects, designed and built.</h2>
+            </div>
+            <p>Each case study shows the final work first, then the few decisions that shaped it, what it changed, and what it taught me.</p>
+          </div>
+
+          <div class="work">
+            <a class="case reveal" href="frogwatch.html">
+              <div class="case-text">
+                <div class="case-top mono"><span>01</span><span>2025 – 26 · Client project</span></div>
+                <h3 style="view-transition-name: title-frogwatch">Frogwatch</h3>
+                <p>AI frog-call identification for citizen scientists. My first design was rejected in user testing; the second was approved by users and the client and shipped. In 2026 I redesigned it again.</p>
+                <ul class="tags"><li>UX design</li><li>Mobile</li><li>User testing</li><li>React Native</li></ul>
+                <div class="case-stats">
+                  <div><b>94%</b><span>task completion</span></div>
+                  <div><b>2.1 taps</b><span>to start recording</span></div>
+                  <div><b>8.2/10</b><span>satisfaction</span></div>
+                </div>
+                <span class="case-link">Read the case study <span class="arrow">↗</span></span>
+              </div>
+              <div class="case-art art-frog" aria-hidden="true">
+                <img src="images/frogwatch/redesign/02-home.jpg" alt="" loading="lazy" />
+                <img src="images/frogwatch/redesign/07-result.jpg" alt="" loading="lazy" />
+                <img src="images/frogwatch/redesign/04-record-listening.jpg" alt="" loading="lazy" />
+              </div>
+            </a>
+
+            <a class="case reveal" href="sfumo.html">
+              <div class="case-text">
+                <div class="case-top mono"><span>02</span><span>2026 · Independent product</span></div>
+                <h3 style="view-transition-name: title-sfumo">Sfumo</h3>
+                <p>A macOS menu bar app that softly blurs everything except the window you're using. I designed, built, branded and launched it solo, from interaction model to checkout.</p>
+                <ul class="tags"><li>Product design</li><li>macOS</li><li>Interaction</li><li>Brand &amp; web</li></ul>
+                <div class="case-stats">
+                  <div><b>0</b><span>permissions required</span></div>
+                  <div><b>$5</b><span>one-time, live now</span></div>
+                  <div><b>Solo</b><span>design to launch</span></div>
+                </div>
+                <span class="case-link">Read the case study <span class="arrow">↗</span></span>
+              </div>
+              <div class="case-art art-sfumo" aria-hidden="true">
+                <img class="shot" src="images/sfumo/shot-writing.jpg" alt="" loading="lazy" />
+                <img class="icon" src="images/sfumo/icon.png" alt="" loading="lazy" />
+              </div>
+            </a>
+
+            <a class="case reveal" href="gesture.html">
+              <div class="case-text">
+                <div class="case-top mono"><span>03</span><span>2026 · Personal project</span></div>
+                <h3 style="view-transition-name: title-gesture">Gesture Portfolio</h3>
+                <p>My previous portfolio, browsed with your hands through a webcam. It worked perfectly on my Mac and nowhere else, and fixing that taught me how to design for input that is never clean.</p>
+                <ul class="tags"><li>Interaction design</li><li>Hand tracking</li><li>Motion</li><li>JavaScript</li></ul>
+                <div class="case-stats">
+                  <div><b>7</b><span>gestures</span></div>
+                  <div><b>0</b><span>servers, all in-browser</span></div>
+                  <div><b>3</b><span>ways in, with fallbacks</span></div>
+                </div>
+                <span class="case-link">Read the case study <span class="arrow">↗</span></span>
+              </div>
+              <div class="case-art art-gesture" aria-hidden="true">
+                <img class="shot" src="images/gesture/card.jpg" alt="" loading="lazy" />
+                <span class="hands">✌️👍☝️🖐️🤟</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="more reveal">
+            <a href="#experience">
+              <b>Design system &amp; 0-to-1 web apps at AAA</b>
+              <span>User interviews, UserBrain usability tests, Figma prototypes and a reusable design system for developer handoff.</span>
+              <em class="mono">Innovation team · 2025 <span class="arrow">↓</span></em>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="band">
+        <div class="wrap">
+          <div class="head reveal">
+            <div>
+              <div class="mono">Experience</div>
+              <h2 class="serif">Where I've designed and built.</h2>
+            </div>
+            <p>Research, design and front-end work at AAA – The Auto Club Group, plus client, research and leadership roles at UM–Dearborn.</p>
+          </div>
+
+          <div class="xp reveal">
+            <details open>
+              <summary>
+                <span class="mono">Apr 2026 – Present</span>
+                <div><h3>Applications Associate, ACG AI Labs</h3><p>AAA – The Auto Club Group · Dearborn, MI · Full-time</p></div>
+              </summary>
+              <div class="xp-body">
+                <ul>
+                  <li>Collaborate with design and product to turn <strong>UI/UX designs into polished interfaces</strong>, integrated end to end with backend APIs.</li>
+                  <li>Build responsive, high-quality applications in <strong>React, TypeScript and Angular</strong>, taking designs from concept to production.</li>
+                  <li>Optimize applications for performance and usability, and contribute to frontend architecture decisions.</li>
+                </ul>
+                <ul class="tags"><li>UI/UX implementation</li><li>React</li><li>TypeScript</li><li>Angular</li></ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="mono">Jan 2026 – Apr 2026</span>
+                <div><h3>API Developer Intern</h3><p>AAA – The Auto Club Group · Dearborn, MI · Internship</p></div>
+              </summary>
+              <div class="xp-body">
+                <ul>
+                  <li>Administered <strong>30 enterprise API proxies</strong> on Google Cloud Apigee across dev, QA and prod, migrating legacy configurations as part of an API modernization effort.</li>
+                  <li>Authored custom JavaScript policies for request/response transformation, validation and error handling.</li>
+                  <li>Tested proxies with Postman and Apigee Debug/Trace, and shipped changes through Jenkins CI/CD pipelines.</li>
+                </ul>
+                <ul class="tags"><li>Apigee</li><li>JavaScript</li><li>Postman</li><li>Jenkins</li></ul>
+              </div>
+            </details>
+
+            <details open>
+              <summary>
+                <span class="mono">May 2025 – Jan 2026</span>
+                <div><h3>Innovation Team Intern</h3><p>AAA – The Auto Club Group · Dearborn, MI · Internship</p></div>
+              </summary>
+              <div class="xp-body">
+                <ul>
+                  <li>Directed UI/UX end to end: ran <strong>user interviews and usability tests</strong> in UserBrain, designed interactive <strong>Figma prototypes</strong>, and built a reusable <strong>design system</strong> for developer handoff.</li>
+                  <li>Launched 0-to-1 responsive web apps in Angular 19, taking concepts from prototype to production.</li>
+                  <li>Rebuilt the AI system of a legacy robot around cloud-hosted Gemini models, with voice-activity detection and speech-to-text/text-to-speech, cutting response latency from <strong>2–3 minutes to 10–15 seconds</strong>.</li>
+                </ul>
+                <ul class="tags"><li>User research</li><li>Usability testing</li><li>Figma</li><li>Design systems</li><li>Angular</li></ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="mono">Jun 2025 – Mar 2026</span>
+                <div><h3>Team Lead, UX Designer &amp; Frontend Developer</h3><p>Frogwatch · Friends of the Rouge · Client project</p></div>
+              </summary>
+              <div class="xp-body">
+                <ul>
+                  <li>Designed the app end to end in <strong>Figma across two iterations</strong>: the first was rejected in user testing, and the redesign was <strong>approved by users and the client</strong>.</li>
+                  <li>Reached <strong>94% task completion</strong> and <strong>8.2/10 satisfaction</strong> in usability testing, with recordings started in 2.1 taps on average.</li>
+                  <li>Led the team of four as project manager, and built the React Native front end and its integration with Firebase and a FastAPI/PyTorch model.</li>
+                </ul>
+                <ul class="tags"><li>UX design</li><li>Figma</li><li>Usability testing</li><li>React Native</li><li>Firebase</li></ul>
+                <a class="case-link" href="frogwatch.html">Read the case study <span class="arrow">↗</span></a>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="mono">May 2024 – Sep 2024</span>
+                <div><h3>Undergraduate Researcher, Data &amp; ML</h3><p>University of Michigan–Dearborn · SURE 2024 · Research</p></div>
+              </summary>
+              <div class="xp-body">
+                <ul>
+                  <li>Summer research on detecting AI-generated images, under Dr. Li.</li>
+                  <li>Trained and evaluated machine-learning models (<strong>CNNSpot, ResNet50</strong>) to classify AI-generated versus real images.</li>
+                  <li>Measured output quality on the GenImage dataset with confusion matrices and ROC curves.</li>
+                </ul>
+                <ul class="tags"><li>Python</li><li>PyTorch</li><li>Model evaluation</li></ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="mono">Jan 2024 – May 2025</span>
+                <div><h3>Founder &amp; President, Artificial Intelligence Club</h3><p>University of Michigan–Dearborn · Leadership</p></div>
+              </summary>
+              <div class="xp-body">
+                <ul>
+                  <li>Founded and led the campus AI Club: workshops, semester projects, guest speakers and a newsletter for students exploring applied AI.</li>
+                </ul>
+                <ul class="tags"><li>Leadership</li><li>Public speaking</li></ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="wrap">
+          <div class="head reveal">
+            <div>
+              <div class="mono">Toolkit</div>
+              <h2 class="serif">Research to release.</h2>
+            </div>
+            <p>Working on both sides of the handoff means designs make it to production intact.</p>
+          </div>
+          <div class="skills reveal">
+            <div>
+              <span class="mono">01</span>
+              <h3>Design &amp; research</h3>
+              <ul><li>User interviews</li><li>Usability testing (UserBrain)</li><li>Wireframing &amp; prototyping</li><li>Figma</li><li>Design systems</li><li>Iterative design</li></ul>
+            </div>
+            <div>
+              <span class="mono">02</span>
+              <h3>Frontend</h3>
+              <ul><li>React &amp; React Native</li><li>Angular</li><li>TypeScript</li><li>JavaScript (ES6+)</li><li>HTML5 &amp; CSS</li><li>Responsive, cross-browser UI</li></ul>
+            </div>
+            <div>
+              <span class="mono">03</span>
+              <h3>Backend &amp; tools</h3>
+              <ul><li>Node.js &amp; REST APIs</li><li>FastAPI</li><li>Firebase</li><li>Google Cloud (Apigee, Cloud Run)</li><li>AWS</li><li>Git &amp; CI/CD</li></ul>
+            </div>
+            <div>
+              <span class="mono">04</span>
+              <h3>Languages</h3>
+              <ul><li>TypeScript &amp; JavaScript</li><li>Swift</li><li>Python</li><li>Java</li><li>C/C++ &amp; C#</li><li>SQL</li></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="band">
+        <div class="wrap about">
+          <div class="reveal">
+            <div class="mono">About</div>
+            <h2 class="serif">Designer first, with a compiler.</h2>
+          </div>
+          <div class="prose reveal">
+            <p>I'm Aryan. I like the whole arc of a product: sitting with users, finding the shape of the problem in Figma, and then building the thing myself so the details survive.</p>
+            <p>That habit comes from a computer science degree with an AI concentration and from work where I've been both the designer and the developer. On Frogwatch it meant the approved prototype and the shipped app matched. On Sfumo it meant I could keep adjusting the fade between windows until it felt right.</p>
+            <p>I've also founded and run UM–Dearborn's AI Club and done research on detecting AI-generated images. I'm a US citizen based in Detroit, Michigan.</p>
+            <div class="edu">
+              <span class="mono">Education · Dec 2025</span>
+              <b>University of Michigan – Dearborn</b>
+              <p>B.S. in Computer Science, AI Concentration · GPA 3.56</p>
+              <p>Data Structures &amp; Algorithms, Operating Systems, Databases, Deep Learning, Natural Language Processing, Artificial Intelligence, Computational Learning</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="contact" style="padding-bottom: 0">
+      <div class="contact reveal">
+        <div class="mono">Contact</div>
+        <h2 class="serif">Let's make something that ships.</h2>
+        <a class="mail" href="mailto:aru24sin@gmail.com">aru24sin@gmail.com</a>
+        <div class="contact-links">
+          <a class="btn" href="resume.pdf" download="Aryan-Singh-Resume.pdf">Download résumé</a>
+          <a class="btn quiet" href="https://www.linkedin.com/in/ary-sin24/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+          <a class="btn quiet" href="https://github.com/aru24sin" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <span>© <span data-year>2026</span> Aryan Singh</span>
+        <span>Detroit, Michigan · <button class="replay" type="button" data-replay>Replay intro</button></span>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="interactions.js?v=3"></script>
+    <script src="intro.js?v=4"></script>
+  </body>
+</html>

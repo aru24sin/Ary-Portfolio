@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sfumo — Aryan Singh</title>
+    <meta name="description" content="Case study: Sfumo, a macOS menu bar app that blurs everything except the window you're using. Designed, built, branded and launched solo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/sfumo/favicon.png" />
+    <link rel="stylesheet" href="style.css?v=8" />
+    <style>:root { --accent: #4a44d6; }</style>
+  </head>
+  <body>
+    <a class="skip" href="#study">Skip to case study</a>
+
+    <nav class="nav" aria-label="Main">
+      <div class="wrap">
+        <a class="brand" href="index.html"><i>A</i>Aryan Singh</a>
+        <div class="nav-links">
+          <a href="index.html#work" aria-current="page">Work</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#about">About</a>
+          <a class="btn small" href="index.html#contact">Get in touch</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="cs-hero">
+      <div class="wrap">
+        <a class="back" href="index.html#work">← All work</a>
+        <div class="mono">Case study 02 · 2026 · Independent product</div>
+        <h1 class="serif" style="view-transition-name: title-sfumo">Sfumo</h1>
+        <p class="hook">A focus tool is only as good as what it leaves out.</p>
+        <p class="lede">A macOS menu bar app that blurs everything except the window you're using. I designed, built, branded and launched it on my own.</p>
+        <div class="cs-links">
+          <a class="btn" href="https://aru24sin.github.io/sfumo/" target="_blank" rel="noopener">Visit the product site <span class="arrow">↗</span></a>
+        </div>
+        <div class="cover sfumo">
+          <img src="images/sfumo/shot-writing.jpg" alt="Sfumo in use: one window sharp, everything else blurred" />
+        </div>
+        <div class="meta" style="margin-top: 0; border-top: 0"><div><span class="mono">Role</span><ul><li>Product designer, developer, brand</li></ul></div><div><span class="mono">Team</span><ul><li>Solo, with AI pair-programming</li></ul></div><div><span class="mono">Timeline</span><ul><li>October 2026 · v1.0 live</li></ul></div><div><span class="mono">Tools</span><ul><li>Swift, SwiftUI, HTML &amp; CSS, Stripe</li></ul></div></div>
+      </div>
+    </header>
+
+    <main class="cs" id="study">
+      <div class="wrap">
+        <section class="block reveal">
+          <div class="mono"><b>Problem</b>Why it matters</div>
+          <div>
+            <h2>The window I was using was never the only thing I saw.</h2>
+            <p class="lead">Full-screen mode hides your work and window managers rearrange it. I wanted the clutter to go quiet <strong>without anything closing or moving.</strong></p>
+          </div>
+        </section>
+        <section class="block reveal" id="final">
+          <div class="mono"><b>Final product</b>In use</div>
+          <div>
+            <h2>Everything stays open. One thing stays sharp.</h2>
+            <div class="video">
+              <iframe src="https://www.youtube-nocookie.com/embed/-R5Gn5TNZ_M?rel=0" title="Sfumo demo" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="wide three">
+              <figure><img src="images/sfumo/shot-writing.jpg" alt="Sfumo while writing" loading="lazy" /><figcaption>Writing</figcaption></figure>
+              <figure><img src="images/sfumo/shot-fonts.jpg" alt="Sfumo while browsing fonts" loading="lazy" /><figcaption>Browsing fonts</figcaption></figure>
+              <figure><img src="images/sfumo/shot-dictionary.jpg" alt="Sfumo while looking something up" loading="lazy" /><figcaption>Looking something up</figcaption></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 01</b>Trust</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Ask for nothing.</h2>
+                <p class="lead">No account, no network, and none of the macOS permission prompts that make people hesitate. That promise now leads the product page.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>The Accessibility permission, which is easier to build with</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/sfumo/shot-fonts.jpg" alt="Sfumo dimming everything behind Font Book" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 02</b>Motion</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>One transition, not two.</h2>
+                <p class="lead">Only the background cross-fades when you switch windows. I built a second animation for the incoming window, saw it blink, and <strong>cut it.</strong></p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Animating the focused window too</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/sfumo/shot-dictionary.jpg" alt="Sfumo with the Dictionary window in focus" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 03</b>Brand</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>As quiet as the product.</h2>
+                <p class="lead">Warm paper, serif type, and a hero that is a working demo: click a window and the blur follows.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>A dark, glowing landing page</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/sfumo/site-v2.jpg" alt="The Sfumo product site" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Impact</b>Results</div>
+          <div>
+            <div class="impact"><div><b>0</b><span>permissions requested</span></div><div><b>$5</b><span>one-time, live now</span></div><div><b>Solo</b><span>idea to checkout</span></div></div>
+            <p class="lead" style="margin-top: 22px"><strong>A complete product where I made every call: what it does, what it refuses to do, what it costs and how it explains itself.</strong></p>
+            <p class="note">Sfumo launched this month, so there are no sales or usage numbers to quote yet.</p>
+          </div>
+        </section>
+        <section class="block reveal" style="border-bottom: 0">
+          <div class="mono"><b>Reflection</b>What I learned</div>
+          <div>
+            <p class="lead"><strong>I fixed a real bug that wasn't the one I was looking at.</strong> Now I pin down exactly what looks wrong before I change anything.</p>
+          </div>
+        </section>
+
+        <aside class="takeaway reveal">
+          <div class="mono">Key takeaway</div>
+          <h2>My best decisions here were things I removed.</h2>
+          <p>A permission prompt, a second animation, a louder brand. I can take a product from idea to checkout alone, and I know when to stop adding.</p>
+        </aside>
+      </div>
+    </main>
+
+    <section class="next">
+      <div class="wrap">
+        <a href="gesture.html">
+          <div class="mono">Next case study</div>
+          <h2 class="serif">Gesture Portfolio <span class="arrow">↗</span></h2>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" style="padding: 0">
+      <div class="contact" style="--glow: #6f79ff">
+        <div class="mono">Contact</div>
+        <h2 class="serif">Let's make something that ships.</h2>
+        <a class="mail" href="mailto:aru24sin@gmail.com">aru24sin@gmail.com</a>
+      </div>
+    </section>
+    <footer>
+      <div class="wrap">
+        <span>© <span data-year>2026</span> Aryan Singh</span>
+        <a href="index.html">Back to home</a>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="interactions.js?v=3"></script>
+  </body>
+</html>
