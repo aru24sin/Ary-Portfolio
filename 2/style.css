@@ -641,3 +641,69 @@ main > section, #contact { position: relative; }
   .d-shot { max-width: 440px; }
   .d:not(.two):not(.wide) .d-shot { max-width: 240px; }
 }
+
+/* =========================================================================
+   Opening sequence, part 1: four interaction components in close-up, each
+   completing, then the view pulls back to a row of frames and hands over to
+   the headline intro. Same paper, ink and blue as the rest of the intro.
+   ========================================================================= */
+html.pre-wait body::after { content: ""; position: fixed; inset: 0; z-index: 150; background: var(--paper); }
+.pre { position: fixed; inset: 0; z-index: 200; background: var(--paper); overflow: hidden; pointer-events: none; }
+.pre.out { opacity: 0; transition: opacity 0.55s ease; }
+.pre-stage { position: absolute; inset: 0; font-size: min(1vw, 1.35vh); }
+.pre.out .pre-stage { transform: translateY(-7vh) scale(0.94); transition: transform 0.65s var(--ease); }
+.pre-meta { position: absolute; left: 0; right: 0; bottom: 28px; display: flex; justify-content: space-between; padding: 0 clamp(16px, 4vw, 48px); transition: opacity 0.3s; }
+.pre.grid .pre-meta { opacity: 0; }
+
+.pre-item { position: absolute; left: 50%; top: 50%; translate: -50% -50%; opacity: 0; display: grid; place-items: center; }
+.pre[data-shot="0"] .pre-item:nth-child(1), .pre[data-shot="1"] .pre-item:nth-child(2),
+.pre[data-shot="2"] .pre-item:nth-child(3), .pre[data-shot="3"] .pre-item:nth-child(4) { opacity: 1; animation: pre-push 0.6s linear both; }
+@keyframes pre-push { from { transform: scale(1); } to { transform: scale(1.08); } }
+.pre.grid .pre-item { opacity: 1; animation: none; transform: translateX(var(--gx)) scale(0.19); transition: transform 0.65s var(--ease); }
+.pre-item:nth-child(1) { --gx: -37.5em; }
+.pre-item:nth-child(2) { --gx: -12.5em; }
+.pre-item:nth-child(3) { --gx: 12.5em; }
+.pre-item:nth-child(4) { --gx: 37.5em; }
+/* In the pulled-back view each component sits in a labelled frame, like the headline will */
+.pre-item::before { content: ""; position: absolute; left: 50%; top: 50%; width: 100em; height: 62em; translate: -50% -50%; border: 0.55em solid #4f7cff; opacity: 0; transition: opacity 0.35s ease 0.25s; }
+.pre-item > b { position: absolute; left: 50%; top: 50%; width: 0; height: 0; translate: -50em -31em; font-size: 1em; opacity: 0; transition: opacity 0.35s ease 0.25s; }
+.pre-item > b span { position: absolute; left: -0.28em; bottom: 2.2em; font: 500 4.6em/1 var(--mono); letter-spacing: 0.04em; color: #fff; background: #4f7cff; padding: 0.42em 0.7em; border-radius: 0.35em; white-space: nowrap; }
+.pre.grid .pre-item::before, .pre.grid .pre-item > b { opacity: 1; }
+
+/* 1. Toggle */
+.pre-toggle .rail { position: relative; display: block; width: 58em; height: 32em; border-radius: 16em; background: #e1ddd3; transition: background 0.32s ease; }
+.pre-toggle .rail i { position: absolute; left: 3em; top: 3em; width: 26em; height: 26em; border-radius: 50%; background: #fff; box-shadow: 0 1.2em 3em rgba(21, 20, 15, 0.22); transition: transform 0.4s cubic-bezier(0.34, 1.45, 0.64, 1); }
+.pre-toggle.done .rail { background: var(--ink); }
+.pre-toggle.done .rail i { transform: translateX(26em); }
+
+/* 2. Hold ring */
+.pre-ring .circle { position: relative; display: grid; place-items: center; width: 38em; height: 38em; border-radius: 50%; background: conic-gradient(#4f7cff calc(var(--rp) * 360deg), #e1ddd3 0); transition: --rp 0.36s ease-out; }
+.pre-ring .circle::before { content: ""; position: absolute; inset: 3.2em; border-radius: 50%; background: var(--paper); }
+.pre-ring.done .circle { --rp: 1; }
+.pre-ring svg { position: relative; width: 17em; height: 17em; fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 30; stroke-dashoffset: 30; transition: stroke-dashoffset 0.28s var(--ease) 0.26s; }
+.pre-ring.done svg { stroke-dashoffset: 0; }
+@property --rp { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+/* 3. Slide to ship */
+.pre-slide .rail { position: relative; display: block; width: 74em; height: 20em; border-radius: 10em; background: #e1ddd3; overflow: hidden; }
+.pre-slide .rail::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 20em; border-radius: 10em; background: var(--ink); transition: width 0.42s var(--ease); }
+.pre-slide .rail i { position: absolute; left: 2.5em; top: 2.5em; width: 15em; height: 15em; border-radius: 50%; background: var(--paper); display: grid; place-items: center; font-style: normal; color: var(--ink); transition: transform 0.42s var(--ease), opacity 0.2s ease 0.3s; }
+.pre-slide .rail i::before { content: "→"; font: 500 6em/1 var(--sans); }
+.pre-slide em, .pre-slide u { position: absolute; inset: 0; display: grid; place-items: center; font: 400 7em/1 var(--serif); font-style: normal; text-decoration: none; transition: opacity 0.25s ease; }
+.pre-slide em { color: var(--ink-2); padding-left: 2.4em; }
+.pre-slide u { color: var(--paper); opacity: 0; font-style: italic; }
+.pre-slide.done .rail::before { width: 100%; }
+.pre-slide.done .rail i { transform: translateX(54em); opacity: 0; }
+.pre-slide.done em { opacity: 0; }
+.pre-slide.done u { opacity: 1; transition-delay: 0.22s; }
+
+/* 4. Button press, with the cursor that will go on to click the headline */
+.pre-press .button { display: grid; place-items: center; width: 56em; height: 17em; border-radius: 8.5em; background: var(--ink); color: var(--paper); }
+.pre-press .button span { font: 500 5.6em/1 var(--sans); }
+.pre-press.done .button { animation: pre-press 0.36s var(--ease) 0.16s both; }
+@keyframes pre-press { 40% { transform: scale(0.94); } }
+.pre-press .pc { position: absolute; left: 50%; top: 50%; transform: translate(26em, 16em); transition: transform 0.3s var(--ease), opacity 0.25s; }
+.pre-press.done .pc { transform: translate(14em, 3em); }
+.pre-press .pc svg { display: block; width: 6em; height: 6em; filter: drop-shadow(0 0.5em 1em rgba(21, 20, 15, 0.25)); }
+.pre-press .pc span { display: block; margin: 0.4em 0 0 4.4em; padding: 0.35em 0.75em; border-radius: 99em 99em 99em 0.4em; font: 500 3.2em/1.2 var(--sans); color: #fff; background: #4f7cff; white-space: nowrap; }
+.pre.grid .pre-press .pc { opacity: 0; }

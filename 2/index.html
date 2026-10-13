@@ -10,14 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=8" />
+    <link rel="stylesheet" href="style.css?v=11" />
+    <link rel="stylesheet" href="lab.css?v=2" />
     <script>
       // Decide before first paint whether the intro plays (once per session, never with reduced motion).
       try {
         if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !sessionStorage.getItem("intro-seen")) {
-          document.documentElement.classList.add("intro");
+          document.documentElement.classList.add("intro", "pre-wait");
           history.scrollRestoration = "manual"; // the intro always starts at the top
-          setTimeout(function () { document.documentElement.classList.remove("intro"); }, 6000); // failsafe
+          setTimeout(function () { document.documentElement.classList.remove("intro", "pre-wait"); }, 9000); // failsafe
         }
       } catch (e) {}
     </script>
@@ -30,6 +31,7 @@
         <a class="brand" href="#top"><i>A</i>Aryan Singh</a>
         <div class="nav-links">
           <a href="#work">Work</a>
+          <a href="#lab">Motion</a>
           <a href="#experience">Experience</a>
           <a href="#about">About</a>
           <a class="btn small" href="#contact">Get in touch</a>
@@ -141,6 +143,96 @@
               <span>User interviews, UserBrain usability tests, Figma prototypes and a reusable design system for developer handoff.</span>
               <em class="mono">Innovation team · 2025 <span class="arrow">↓</span></em>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <div class="wrap">
+          <div class="head reveal">
+            <div>
+              <div class="mono">Motion &amp; interaction</div>
+              <h2 class="serif">Small pieces, built to be felt.</h2>
+            </div>
+            <p>Six interaction studies drawn from my projects. Each one answers a question about feedback. They're live: try them.</p>
+          </div>
+
+          <div class="lab-grid reveal">
+            <article class="lab-tile">
+              <div class="lab-stage">
+                <div class="lab-hold">
+                  <div class="bars" aria-hidden="true"><i style="--n:0;--h:14"></i><i style="--n:1;--h:26"></i><i style="--n:2;--h:10"></i><i style="--n:3;--h:30"></i><i style="--n:4;--h:18"></i><i style="--n:5;--h:24"></i><i style="--n:6;--h:8"></i><i style="--n:7;--h:28"></i><i style="--n:8;--h:16"></i><i style="--n:9;--h:22"></i><i style="--n:10;--h:12"></i><i style="--n:11;--h:26"></i><i style="--n:12;--h:9"></i><i style="--n:13;--h:20"></i></div>
+                  <button class="ring" type="button" aria-label="Hold to record"><span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span></button>
+                </div>
+                <span class="lab-hint">Hold to record</span>
+              </div>
+              <div class="lab-info"><span class="mono">01 · Commitment</span><h3>Hold to record</h3><p>A filling ring makes the wait visible. Let go early and it springs back, so nothing starts by accident.</p></div>
+            </article>
+
+            <article class="lab-tile">
+              <div class="lab-stage sky">
+                <div class="lab-focus">
+                  <button class="w1 on" type="button" aria-label="Focus the notes window"><i></i><i></i><i></i><i></i></button>
+                  <button class="w2" type="button" aria-label="Focus the photos window"><i></i><i></i><i></i></button>
+                  <button class="w3" type="button" aria-label="Focus the chat window"><i></i><i></i></button>
+                </div>
+              </div>
+              <div class="lab-info"><span class="mono">02 · Attention</span><h3>Focus follows</h3><p>Point at a window and the rest go quiet. One soft transition, nothing closes or moves. From Sfumo.</p></div>
+            </article>
+
+            <article class="lab-tile">
+              <div class="lab-stage">
+                <div class="lab-slide">
+                  <span class="fill"></span>
+                  <span class="label">Slide to submit</span>
+                  <span class="done">Sent for review ✓</span>
+                  <button class="thumb" type="button" aria-label="Slide to submit. Press Enter to submit">→</button>
+                </div>
+              </div>
+              <div class="lab-info"><span class="mono">03 · Confirmation</span><h3>Slide to submit</h3><p>A drag is harder to do by mistake than a tap. Fall short of the end and it returns.</p></div>
+            </article>
+
+            <article class="lab-tile">
+              <div class="lab-stage">
+                <div class="lab-seg-wrap">
+                  <span id="seg-q">How sure are you?</span>
+                  <div class="lab-seg" role="radiogroup" aria-labelledby="seg-q">
+                    <span class="pill" aria-hidden="true"></span>
+                    <button type="button" role="radio" aria-checked="true">Very</button>
+                    <button type="button" role="radio" aria-checked="false">Somewhat</button>
+                    <button type="button" role="radio" aria-checked="false">Not sure</button>
+                  </div>
+                </div>
+              </div>
+              <div class="lab-info"><span class="mono">04 · Selection</span><h3>Sliding choice</h3><p>One pill travels between options with a slight overshoot, so the eye sees where the choice went. From Frogwatch.</p></div>
+            </article>
+
+            <article class="lab-tile">
+              <div class="lab-stage">
+                <button class="lab-island" type="button" aria-expanded="false" aria-label="Recording status. Press to expand or collapse">
+                  <span class="mini"><b><i class="live"></i>Listening</b><span class="mini-time">0:03</span></span>
+                  <span class="full">
+                    <small><i class="live"></i>Listening for frogs</small>
+                    <span class="wave" aria-hidden="true"><i style="--n:0;--h:10"></i><i style="--n:1;--h:22"></i><i style="--n:2;--h:14"></i><i style="--n:3;--h:26"></i><i style="--n:4;--h:8"></i><i style="--n:5;--h:20"></i><i style="--n:6;--h:24"></i><i style="--n:7;--h:12"></i><i style="--n:8;--h:18"></i><i style="--n:9;--h:26"></i><i style="--n:10;--h:10"></i><i style="--n:11;--h:16"></i><i style="--n:12;--h:22"></i><i style="--n:13;--h:9"></i><i style="--n:14;--h:20"></i><i style="--n:15;--h:14"></i><i style="--n:16;--h:24"></i><i style="--n:17;--h:11"></i></span>
+                    <span class="foot"><span class="time">0:03</span><span class="stop">Stop</span></span>
+                  </span>
+                </button>
+                <span class="lab-hint">Tap the pill</span>
+              </div>
+              <div class="lab-info"><span class="mono">05 · Continuity</span><h3>Live pill</h3><p>A status that grows into its controls and shrinks back. The same object, so you never lose track of it.</p></div>
+            </article>
+
+            <article class="lab-tile">
+              <div class="lab-stage">
+                <button class="lab-row" type="button" aria-pressed="false" aria-label="Spring Peeper recording. Press to toggle verified">
+                  <img src="images/lab/peeper.png" alt="" />
+                  <span><b>Spring Peeper</b><small>Yesterday</small></span>
+                  <span class="lab-chip"><span class="a">● In review</span><span class="b">✓ Verified</span><em style="--a:0deg"></em><em style="--a:45deg"></em><em style="--a:90deg"></em><em style="--a:135deg"></em><em style="--a:180deg"></em><em style="--a:225deg"></em><em style="--a:270deg"></em><em style="--a:315deg"></em></span>
+                </button>
+                <span class="lab-hint">Tap to verify</span>
+              </div>
+              <div class="lab-info"><span class="mono">06 · Reward</span><h3>Status flip</h3><p>The chip turns over and a small burst marks the moment. Enough to notice, not enough to interrupt.</p></div>
+            </article>
           </div>
         </div>
       </section>
@@ -325,6 +417,7 @@
 
     <script src="main.js"></script>
     <script src="interactions.js?v=3"></script>
-    <script src="intro.js?v=4"></script>
+    <script src="lab.js?v=1"></script>
+    <script src="intro.js?v=7"></script>
   </body>
 </html>

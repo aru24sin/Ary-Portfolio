@@ -1,0 +1,112 @@
+/* Motion & interaction studies: six small live components on the home page. */
+.lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.lab-tile { border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: var(--card); display: flex; flex-direction: column; }
+.lab-stage {
+  position: relative; height: 250px; display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(120% 100% at 20% 0%, #1d3526 0%, #0e1712 70%); color: #f4f7f2;
+  --lime: #ccff00; --ink: #12200a; --surf: #203127; --mute: #a3b5a9; --red: #ff5a4f; --ok: #5be38b;
+  font-family: var(--sans); user-select: none; -webkit-user-select: none; touch-action: manipulation;
+}
+.lab-stage button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; }
+.lab-stage :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.lab-info { padding: 20px 22px 22px; }
+.lab-info .mono { color: var(--ink-3); }
+.lab-info h3 { font: 400 26px/1.1 var(--serif); margin: 8px 0 6px; }
+.lab-info p { color: var(--ink-2); font-size: 15.5px; line-height: 1.45; }
+.lab-hint { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-size: 13.5px; color: var(--mute); transition: opacity 0.3s; pointer-events: none; }
+
+/* 1. Hold to record */
+.lab-hold { display: grid; justify-items: center; gap: 18px; }
+.lab-hold .bars { display: flex; align-items: center; gap: 4px; height: 40px; }
+.lab-hold .bars i { width: 4px; height: 8px; border-radius: 2px; background: var(--surf); transition: height 0.25s var(--ease), background 0.25s; }
+.lab-hold.holding .bars i { background: var(--lime); animation: lab-bar 0.7s ease-in-out infinite alternate; animation-delay: calc(var(--n) * -0.09s); }
+@keyframes lab-bar { from { height: 6px; } to { height: calc(10px + var(--h) * 1px); } }
+.lab-hold .ring {
+  position: relative; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--lime) calc(var(--p, 0) * 360deg), var(--surf) 0);
+  transition: transform 0.3s var(--ease);
+}
+.lab-hold .ring::before { content: ""; position: absolute; inset: 6px; border-radius: 50%; background: #0e1712; }
+.lab-hold .dot { position: relative; width: 58px; height: 58px; border-radius: 50%; background: var(--red); display: grid; place-items: center; transition: border-radius 0.3s var(--ease), transform 0.3s var(--ease), background 0.3s; }
+.lab-hold.holding .ring { transform: scale(1.08); }
+.lab-hold.holding .dot { transform: scale(0.62); border-radius: 12px; }
+.lab-hold.done .dot { background: var(--lime); transform: scale(1); }
+.lab-hold .dot svg { width: 28px; height: 28px; stroke: var(--ink); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 30; stroke-dashoffset: 30; transition: stroke-dashoffset 0.4s var(--ease) 0.1s; }
+.lab-hold.done .dot svg { stroke-dashoffset: 0; }
+.lab-hold.springing .ring { transition: --p 0.5s var(--ease), transform 0.3s var(--ease); }
+@property --p { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+/* 2. Focus follows */
+.lab-stage.sky { background: radial-gradient(110% 90% at 80% 0%, #8ea5ff 0%, #4a44d6 50%, #251f6e 100%); }
+.lab-focus { position: absolute; inset: 0; }
+.lab-focus button {
+  position: absolute; border-radius: 10px; background: #fbfaf7; overflow: hidden; text-align: left;
+  box-shadow: 0 12px 30px rgba(10, 8, 50, 0.35);
+  transition: filter 0.45s ease, transform 0.45s var(--ease), box-shadow 0.45s ease;
+  filter: blur(4px) brightness(0.72) saturate(0.8); transform: scale(0.97);
+}
+.lab-focus button.on { filter: none; transform: none; z-index: 2; box-shadow: 0 22px 50px rgba(10, 8, 50, 0.5); }
+.lab-focus button::before { content: ""; display: block; height: 16px; background: #eceae4 radial-gradient(circle at 10px 8px, #ff5f57 3px, transparent 3.5px), #eceae4; background-image: radial-gradient(circle at 10px 8px, #ff5f57 3px, transparent 3.5px), radial-gradient(circle at 21px 8px, #febc2e 3px, transparent 3.5px), radial-gradient(circle at 32px 8px, #28c840 3px, transparent 3.5px); }
+.lab-focus button i { display: block; height: 6px; margin: 9px 10px 0; border-radius: 3px; background: rgba(21, 20, 15, 0.14); }
+.lab-focus button i:first-of-type { width: 50%; background: rgba(21, 20, 15, 0.32); }
+.lab-focus .w1 { left: 8%; top: 14%; width: 46%; height: 58%; }
+.lab-focus .w2 { left: 36%; top: 30%; width: 44%; height: 56%; }
+.lab-focus .w3 { left: 62%; top: 10%; width: 30%; height: 44%; }
+
+/* 3. Slide to submit */
+.lab-slide { position: relative; width: min(280px, 80%); height: 64px; border-radius: 999px; background: var(--surf); overflow: hidden; touch-action: none; }
+.lab-slide .fill { position: absolute; inset: 0; background: var(--lime); transform-origin: 0 50%; border-radius: 999px; width: calc(64px + var(--x, 0) * 1px); transition: background 0.3s; }
+.lab-slide .label { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 600; font-size: 16px; padding-left: 40px; opacity: calc(1 - var(--t, 0) * 1.6); pointer-events: none; }
+.lab-slide .done { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; font-size: 16px; color: var(--ink); opacity: 0; transform: translateY(8px); transition: opacity 0.3s, transform 0.4s var(--ease); pointer-events: none; }
+.lab-slide .thumb { position: absolute; left: 5px; top: 5px; width: 54px; height: 54px; border-radius: 50%; background: #0e1712; display: grid; place-items: center; color: var(--lime); font-size: 20px; transform: translateX(calc(var(--x, 0) * 1px)); cursor: grab; touch-action: none; }
+.lab-slide.back .thumb, .lab-slide.back .fill { transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), width 0.5s cubic-bezier(0.34, 1.4, 0.64, 1); }
+.lab-slide.sent .thumb { opacity: 0; transition: opacity 0.2s; }
+.lab-slide.sent .fill { width: 100%; transition: width 0.3s var(--ease); }
+.lab-slide.sent .done { opacity: 1; transform: none; }
+
+/* 4. Segmented control */
+.lab-seg-wrap { display: grid; gap: 14px; justify-items: center; }
+.lab-seg-wrap > span { font-size: 15px; color: var(--mute); }
+.lab-seg { position: relative; display: flex; padding: 5px; border-radius: 18px; background: var(--surf); }
+.lab-seg .pill { position: absolute; top: 5px; bottom: 5px; left: 0; width: calc(var(--w, 0) * 1px); border-radius: 14px; background: var(--lime); transform: translateX(calc(var(--l, 0) * 1px)); transition: transform 0.5s cubic-bezier(0.34, 1.5, 0.64, 1), width 0.4s var(--ease); }
+.lab-seg button { position: relative; height: 46px; padding: 0 16px; font-weight: 600; font-size: 15px; white-space: nowrap; transition: color 0.25s; }
+.lab-seg button[aria-checked="true"] { color: var(--ink); }
+.lab-seg button:active { transform: scale(0.96); }
+
+/* 5. Live pill */
+.lab-island { position: absolute; top: 22px; left: 50%; translate: -50% 0; width: 176px; height: 42px; border-radius: 21px; background: #000; overflow: hidden; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5); transition: width 0.55s cubic-bezier(0.3, 1.25, 0.5, 1), height 0.55s cubic-bezier(0.3, 1.25, 0.5, 1), border-radius 0.55s var(--ease); }
+.lab-island.open { width: 262px; height: 150px; border-radius: 34px; }
+.lab-island .mini, .lab-island .full { position: absolute; inset: 0; transition: opacity 0.25s ease, transform 0.4s var(--ease), filter 0.3s; }
+.lab-island .mini { display: flex; align-items: center; justify-content: space-between; padding: 0 14px; font-weight: 600; font-size: 14px; width: 176px; }
+.lab-island .mini b { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.lab-island .live { width: 9px; height: 9px; border-radius: 50%; background: var(--red); animation: lab-pulse 1.2s ease-in-out infinite; }
+@keyframes lab-pulse { 50% { opacity: 0.35; transform: scale(0.8); } }
+.lab-island .full { opacity: 0; transform: scale(0.9); filter: blur(6px); padding: 18px 20px; display: grid; grid-template-rows: auto 1fr auto; text-align: left; pointer-events: none; }
+.lab-island.open .mini { opacity: 0; filter: blur(6px); transform: scale(0.9); }
+.lab-island.open .full { opacity: 1; transform: none; filter: none; transition-delay: 0.12s; }
+.lab-island .full small { display: flex; align-items: center; gap: 8px; color: var(--mute); font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.lab-island .wave { display: flex; align-items: center; gap: 3px; height: 34px; }
+.lab-island .wave i { width: 3px; border-radius: 2px; background: var(--lime); height: 6px; animation: lab-bar 0.6s ease-in-out infinite alternate; animation-delay: calc(var(--n) * -0.07s); }
+.lab-island .foot { display: flex; align-items: center; justify-content: space-between; }
+.lab-island .time { font-weight: 700; font-size: 26px; font-variant-numeric: tabular-nums; letter-spacing: -0.5px; }
+.lab-island .stop { height: 34px; padding: 0 14px; border-radius: 17px; background: var(--red); font-weight: 700; font-size: 13.5px; display: grid; place-items: center; }
+
+/* 6. Status flip */
+.lab-row { position: relative; display: flex; align-items: center; gap: 10px; width: min(310px, 92%); padding: 12px; border-radius: 18px; background: #17241c; border: 1px solid rgba(255, 255, 255, 0.09); text-align: left; transition: transform 0.2s var(--ease); }
+.lab-row:active { transform: scale(0.98); }
+.lab-row img { width: 52px; height: 52px; border-radius: 13px; object-fit: cover; background: #fff; }
+.lab-row > span { flex: 1; min-width: 0; }
+.lab-row b { display: block; font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lab-row small { color: var(--mute); font-size: 13.5px; }
+.lab-chip { position: relative; height: 30px; perspective: 300px; }
+.lab-chip span { display: flex; align-items: center; gap: 5px; height: 30px; padding: 0 10px; border-radius: 15px; border: 1px solid; font-size: 12.5px; font-weight: 700; white-space: nowrap; backface-visibility: hidden; transition: transform 0.55s cubic-bezier(0.3, 1.3, 0.5, 1), opacity 0.3s; }
+.lab-chip .a { color: #ffc24b; }
+.lab-chip .b { color: var(--ok); position: absolute; right: 0; top: 0; transform: rotateX(-90deg); opacity: 0; }
+.lab-row.ok .lab-chip .a { transform: rotateX(90deg); opacity: 0; }
+.lab-row.ok .lab-chip .b { transform: none; opacity: 1; }
+.lab-chip em { position: absolute; right: 30px; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--ok); opacity: 0; pointer-events: none; }
+.lab-row.ok .lab-chip em { animation: lab-burst 0.7s var(--ease) both; }
+@keyframes lab-burst { 0% { opacity: 1; transform: rotate(var(--a)) translateX(0) scale(1); } 100% { opacity: 0; transform: rotate(var(--a)) translateX(34px) scale(0.3); } }
+
+@media (max-width: 960px) { .lab-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .lab-grid { grid-template-columns: 1fr; } }

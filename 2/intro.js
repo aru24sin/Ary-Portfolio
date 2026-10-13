@@ -1,4 +1,5 @@
-// Home page intro. The <head> script adds html.intro before first paint when
+// Home page intro, in two parts: component close-ups, then the headline being
+// built. The <head> script adds html.intro before first paint when
 // the intro should play; this file runs the timeline and always ends by
 // removing that class, so the page can never stay hidden.
 (() => {
@@ -65,10 +66,39 @@
   moveCursor(hb.x + hb.w * 0.82, hb.y + hb.h + 40);
   wrap.append(frame, cursor);
 
+  // Part 1: four components in close-up, each completing, then a pull-back.
+  const SHOTS = [
+    ["Toggle", "pre-toggle", `<span class="rail"><i></i></span>`],
+    ["Hold", "pre-ring", `<span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>`],
+    ["Slide", "pre-slide", `<span class="rail"><em>Slide to ship</em><u>Shipped</u><i></i></span>`],
+    ["Button", "pre-press", `<span class="button"><span>View my work</span></span><span class="pc"><svg viewBox="0 0 24 24"><path d="M4 2.5 19.5 11l-7 1.8L9.2 20z" fill="#4f7cff" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Aryan</span></span>`],
+  ];
+  const SHOT_MS = 440, PULL_BACK_MS = 620;
+  const pre = document.createElement("div");
+  pre.className = "pre";
+  pre.setAttribute("aria-hidden", "true");
+  pre.innerHTML = `<div class="pre-stage">${SHOTS.map(([name, cls, body]) => `<div class="pre-item ${cls}"><b><span>${name}</span></b>${body}</div>`).join("")}</div>
+    <div class="pre-meta mono"><span class="pre-count"></span><span>Aryan Singh · Portfolio</span></div>`;
+  document.body.append(pre);
+  const preItems = [...pre.querySelectorAll(".pre-item")];
+  const preCount = pre.querySelector(".pre-count");
+  SHOTS.forEach(([name], i) => {
+    at(60 + i * SHOT_MS, () => { pre.dataset.shot = i; preCount.textContent = `0${i + 1} / 04 — ${name}`; });
+    at(60 + i * SHOT_MS + 110, () => preItems[i].classList.add("done"));
+  });
+  const pullBack = 60 + SHOTS.length * SHOT_MS;
+  at(pullBack, () => { delete pre.dataset.shot; pre.classList.add("grid"); });
+  const handOver = pullBack + PULL_BACK_MS + 260; // when the overlay starts to clear
+  at(handOver, () => { root.classList.remove("pre-wait"); pre.classList.add("out"); });
+  at(handOver + 700, () => pre.remove());
+  const o = handOver - 60; // part 2 (the headline) is scheduled from here
+
   const finish = () => {
     if (finished) return;
     finished = true;
     timers.forEach(clearTimeout);
+    pre.remove();
+    root.classList.remove("pre-wait");
     em.textContent = emText;
     em.classList.remove("code");
     words.forEach((w) => w.classList.add("on"));
@@ -90,11 +120,11 @@
   // Timeline
   scrollTo({ top: 0, behavior: "instant" });
   root.classList.add("intro-anim");
-  at(120, () => frame.classList.add("show"));
-  at(220, () => cursor.classList.add("show"));
+  at(o + 120, () => frame.classList.add("show"));
+  at(o + 220, () => cursor.classList.add("show"));
 
   const emIndex = words.indexOf(em);
-  let t = 520;
+  let t = o + 520;
   words.forEach((w, i) => {
     if (i === emIndex) {
       const eb = box(em);
