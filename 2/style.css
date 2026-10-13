@@ -707,3 +707,11 @@ html.pre-wait body::after { content: ""; position: fixed; inset: 0; z-index: 150
 .pre-press .pc svg { display: block; width: 6em; height: 6em; filter: drop-shadow(0 0.5em 1em rgba(21, 20, 15, 0.25)); }
 .pre-press .pc span { display: block; margin: 0.4em 0 0 4.4em; padding: 0.35em 0.75em; border-radius: 99em 99em 99em 0.4em; font: 500 3.2em/1.2 var(--sans); color: #fff; background: #4f7cff; white-space: nowrap; }
 .pre.grid .pre-press .pc { opacity: 0; }
+
+/* About: portrait and life outside work */
+.portrait { margin-top: clamp(24px, 3vw, 40px); max-width: 380px; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); }
+.portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; transition: transform 1.2s var(--ease); }
+.portrait:hover img { transform: scale(1.03); }
+.off { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+.about .prose .off p { margin-top: 8px; color: var(--ink); }
+@media (max-width: 620px) { .portrait { max-width: 280px; } }
