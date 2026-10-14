@@ -253,7 +253,7 @@
   }
 
   /* 10. The flow video plays while it is on screen */
-  $$(".phone-video").forEach((v) => {
+  $$(".phone-video, .clip").forEach((v) => {
     if (calm) return;
     new IntersectionObserver(([e]) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { threshold: 0.5 }).observe(v);
   });

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signal — Aryan Singh</title>
+    <meta name="description" content="NDA-safe case study: a self-serve analytics platform, rebuilt as an interactive prototype with fictional data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css?v=15" />
+    <style>:root { --accent: #10857a; }</style>
+  </head>
+  <body>
+    <a class="skip" href="#study">Skip to case study</a>
+
+    <nav class="nav" aria-label="Main">
+      <div class="wrap">
+        <a class="brand" href="index.html"><i>A</i>Aryan Singh</a>
+        <div class="nav-links">
+          <a href="index.html#work" aria-current="page">Work</a>
+          <a href="index.html#lab">Motion</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#about">About</a>
+          <a class="btn small" href="index.html#contact">Get in touch</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="cs-hero">
+      <div class="wrap">
+        <a class="back" href="index.html#work">← All work</a>
+        <div class="mono">Case study 02 · 2026 · Work · NDA-safe</div>
+        <h1 class="serif" style="view-transition-name: title-signal">Signal</h1>
+        <p class="hook">Dashboards people build, not request.</p>
+        <p class="lede">An analytics platform for operations leaders. I designed it end to end at work; shown here as a rebuild with fictional data.</p>
+        <div class="cs-links">
+          <a class="btn" href="prototype/signal/index.html" target="_blank" rel="noopener">Open the prototype <span class="arrow">↗</span></a>
+        </div>
+        <div class="cover signal">
+          <img src="images/signal/01-dashboard.jpg" alt="Signal dashboard with KPI cards, a comparison line chart and a bar chart with target" />
+        </div>
+        <div class="meta" style="margin-top: 0; border-top: 0"><div><span class="mono">Role</span><ul><li>Product design, front-end</li></ul></div><div><span class="mono">Team</span><ul><li>ACG AI Labs</li></ul></div><div><span class="mono">Timeline</span><ul><li>2026</li></ul></div><div><span class="mono">Tools</span><ul><li>Figma, React, TypeScript</li></ul></div></div>
+      </div>
+    </header>
+
+    <main class="cs" id="study">
+      <div class="wrap">
+        <section class="block reveal">
+          <div class="mono"><b>Problem</b>Why it matters</div>
+          <div>
+            <h2>Every new chart was a request.</h2>
+            <p class="lead">Leaders needed operational data their own way, without waiting on engineering.</p>
+          </div>
+        </section>
+        <section class="block reveal" id="final">
+          <div class="mono"><b>Final product</b>Prototype</div>
+          <div>
+            <h2>Build it, read it, trust it.</h2>
+            <figure class="wide"><video class="clip" src="images/signal/build.mp4" poster="images/signal/01-dashboard.jpg" muted loop playsinline preload="metadata" controls aria-label="Building a dashboard from empty"></video><figcaption>From an empty dashboard to a saved one</figcaption></figure>
+            <div class="wide pair">
+              <figure><img src="images/signal/06-audit.jpg" alt="Audit log filtered by date and action" loading="lazy" /><figcaption>Audit log</figcaption></figure>
+              <figure><img src="images/signal/08-catalog.jpg" alt="Metric catalog with explorer and coverage" loading="lazy" /><figcaption>Catalog</figcaption></figure>
+            </div>
+            <p class="note"><a href="prototype/signal/index.html" target="_blank" rel="noopener" style="color:var(--accent)">Open the live prototype ↗</a></p>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 01</b>Editing</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Edit where you look.</h2>
+                <p class="lead">The dashboard turns editable in place, with a metric library beside it and undo on every change.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Filing a request to the data team</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/signal/03-editing.jpg" alt="Edit mode with library panel and unsaved-changes bar" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 02</b>Building</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Pick a metric, see the chart.</h2>
+                <p class="lead">Metric, visualization and range, with a live preview before it lands.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Configuring a chart blind</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/signal/04-create.jpg" alt="Create a card dialog with live preview" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 03</b>Audit</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>The chart is the filter.</h2>
+                <p class="lead">Drag across activity to narrow the log. Each event opens beside the list; arrow keys move through them.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Date pickers and page loads</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/signal/07-inspector.jpg" alt="Audit log with brushed chart and event inspector" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 04</b>Trust</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Show where the number comes from.</h2>
+                <p class="lead">Every metric lists its coverage, backfill and where it is used.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Numbers with no source</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/signal/10-metric.jpg" alt="Metric detail with coverage and backfill" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Motion</b>Interaction details</div>
+          <div>
+            <h2>Small motion, clear cause and effect.</h2>
+            <div class="wide three">
+              <figure><video class="clip" src="images/signal/explore.mp4" poster="images/signal/05-hover.jpg" muted loop playsinline preload="metadata" aria-label="Hover compares periods; ranges recount"></video><figcaption>Hover compares periods; ranges recount</figcaption></figure>
+              <figure><video class="clip" src="images/signal/audit.mp4" poster="images/signal/06-audit.jpg" muted loop playsinline preload="metadata" aria-label="Brush, filter, inspect"></video><figcaption>Brush, filter, inspect</figcaption></figure>
+              <figure><video class="clip" src="images/signal/catalog.mp4" poster="images/signal/09-search.jpg" muted loop playsinline preload="metadata" aria-label="⌘K to any metric, light to dark"></video><figcaption>⌘K to any metric, light to dark</figcaption></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal" style="border-bottom: 0">
+          <div class="mono"><b>Impact</b>Results</div>
+          <div>
+            <p class="lead"><strong>Usage numbers are under NDA.</strong> This is my prototype rebuilt with fictional names and data, following current analytics tools.</p>
+          </div>
+        </section>
+
+        <aside class="takeaway reveal">
+          <div class="mono">Key takeaway</div>
+          <h2>Self-serve beats a request queue.</h2>
+        </aside>
+      </div>
+    </main>
+
+    <section class="next">
+      <div class="wrap">
+        <a href="sfumo.html">
+          <div class="mono">Next case study</div>
+          <h2 class="serif">Sfumo <span class="arrow">↗</span></h2>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" style="padding: 0">
+      <div class="contact" style="--glow: #4fb3a8">
+        <div class="mono">Contact</div>
+        <h2 class="serif">Let's make something that ships.</h2>
+        <a class="mail" href="mailto:aru24sin@gmail.com">aru24sin@gmail.com</a>
+      </div>
+    </section>
+    <footer>
+      <div class="wrap">
+        <span>© <span data-year>2026</span> Aryan Singh</span>
+        <a href="index.html">Back to home</a>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="interactions.js?v=4"></script>
+  </body>
+</html>
