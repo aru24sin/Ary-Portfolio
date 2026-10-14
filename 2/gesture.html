@@ -32,15 +32,15 @@
         <a class="back" href="index.html#work">← All work</a>
         <div class="mono">Case study 03 · 2026 · Personal project</div>
         <h1 class="serif" style="view-transition-name: title-gesture">Gesture Portfolio</h1>
-        <p class="hook">It worked perfectly on my Mac, and nowhere else.</p>
-        <p class="lede">My previous portfolio, browsed with your hands through a webcam. It runs entirely in the browser.</p>
+        <p class="hook">A portfolio you can browse without a mouse.</p>
+        <p class="lede">Hand gestures through a webcam, with mouse and keyboard as equals. Runs entirely in the browser.</p>
         <div class="cs-links">
           <a class="btn" href="../1/index.html">Try it with your camera <span class="arrow">↗</span></a>
         </div>
         <div class="cover gesture">
           <img src="images/gesture/card.jpg" alt="The gesture portfolio home screen" />
         </div>
-        <div class="meta" style="margin-top: 0; border-top: 0"><div><span class="mono">Role</span><ul><li>Interaction designer, developer</li></ul></div><div><span class="mono">Team</span><ul><li>Solo, with AI pair-programming</li></ul></div><div><span class="mono">Timeline</span><ul><li>September 2026</li></ul></div><div><span class="mono">Tools</span><ul><li>MediaPipe, JavaScript, Web Animations</li></ul></div></div>
+        <div class="meta" style="margin-top: 0; border-top: 0"><div><span class="mono">Role</span><ul><li>Interaction design, development</li></ul></div><div><span class="mono">Team</span><ul><li>Solo</li></ul></div><div><span class="mono">Timeline</span><ul><li>September 2026</li></ul></div><div><span class="mono">Tools</span><ul><li>MediaPipe, JavaScript</li></ul></div></div>
       </div>
     </header>
 
@@ -49,14 +49,14 @@
         <section class="block reveal">
           <div class="mono"><b>Problem</b>Why it matters</div>
           <div>
-            <h2>Portfolios describe interaction design. I wanted mine to be one.</h2>
-            <p class="lead">A hand in front of a webcam is a noisy input: it jitters, flickers, and runs differently on every computer. <strong>Could it feel as dependable as a mouse?</strong></p>
+            <h2>Most websites assume a mouse and a steady hand.</h2>
+            <p class="lead">I wanted navigation that works with whatever input someone has.</p>
           </div>
         </section>
         <section class="block reveal" id="final">
           <div class="mono"><b>Final product</b>How it works</div>
           <div>
-            <h2>Five poses, a pinch and a fist.</h2>
+            <h2>Gesture, click or keyboard. All equal.</h2>
             <div class="vocab">
               <div><b>✌️</b><span>About</span></div>
               <div><b>👍</b><span>Case studies</span></div>
@@ -67,19 +67,32 @@
               <div><b>✊</b><span>Close</span></div>
             </div>
             <div class="wide pair">
-              <figure><img src="images/gesture/card.jpg" alt="Home with the Case Studies card open" loading="lazy" /><figcaption>A held pose opens its card</figcaption></figure>
-              <figure><img src="images/gesture/reader.jpg" alt="Case study page" loading="lazy" /><figcaption>A pinch opens the full page</figcaption></figure>
+              <figure><img src="images/gesture/card.jpg" alt="Home with the Case Studies card open" loading="lazy" /><figcaption>Each card names its gesture</figcaption></figure>
+              <figure><img src="images/gesture/reader.jpg" alt="Case study page" loading="lazy" /><figcaption>Hints stay on screen while reading</figcaption></figure>
             </div>
-            <p class="note">Shown with the camera off. With it on, live video fills the background.</p>
+            <p class="note">Shown with the camera off.</p>
           </div>
         </section>
         <section class="block reveal">
-          <div class="mono"><b>Decision 01</b>Intent</div>
+          <div class="mono"><b>Decision 01</b>Access</div>
           <div>
             <div class="d wide">
               <div>
-                <h2>Make people mean it.</h2>
-                <p class="lead">A pose must be held for 0.65 seconds, with a progress bar, and fires once. A hand passing through a thumbs-up opens nothing.</p>
+                <h2>Never the only way in.</h2>
+                <p class="lead">Every card opens by gesture, click or arrow key. It works with the camera off and respects reduced motion.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Gestures as the only input</s></p>
+              </div>
+              <figure class="d-shot"><img src="images/gesture/home.jpg" alt="Home with five cards, arrow buttons and an Enable camera button" loading="lazy" /></figure>
+            </div>
+          </div>
+        </section>
+        <section class="block reveal">
+          <div class="mono"><b>Decision 02</b>Tolerance</div>
+          <div>
+            <div class="d wide">
+              <div>
+                <h2>Forgiving of unsteady hands.</h2>
+                <p class="lead">A pose must be held 0.65s, and a pinch needs a clear open and close. Tremors and passing hands trigger nothing.</p>
                 <p class="d-not"><span class="verdict try">Instead of</span><s>Acting on the first frame</s></p>
               </div>
               <figure class="d-shot"><img src="images/gesture/card.jpg" alt="A card opened by a held pose" loading="lazy" /></figure>
@@ -87,50 +100,29 @@
           </div>
         </section>
         <section class="block reveal">
-          <div class="mono"><b>Decision 02</b>Precision</div>
+          <div class="mono"><b>Decision 03</b>Feedback</div>
           <div>
             <div class="d wide">
               <div>
-                <h2>A pinch that doesn't stutter.</h2>
-                <p class="lead">A pinch starts at one finger distance and ends at a wider one, so trembling fingertips can't double-click.</p>
-                <p class="d-not"><span class="verdict try">Instead of</span><s>A single on/off threshold</s></p>
+                <h2>Always show what's happening.</h2>
+                <p class="lead">A bar fills while you hold, a cursor follows your hand, and labels show every gesture.</p>
+                <p class="d-not"><span class="verdict try">Instead of</span><s>Hidden timing</s></p>
               </div>
-              <figure class="d-shot"><img src="images/gesture/reader.jpg" alt="Reader page opened by a pinch" loading="lazy" /></figure>
+              <figure class="d-shot"><img src="images/gesture/reader.jpg" alt="Reader page with gesture hints in the header" loading="lazy" /></figure>
             </div>
-          </div>
-        </section>
-        <section class="block reveal">
-          <div class="mono"><b>Decision 03</b>Reach</div>
-          <div>
-            <div class="d wide">
-              <div>
-                <h2>Design for the slowest laptop.</h2>
-                <p class="lead">It worked on my Mac and nowhere else. I reproduced the failure at low frame rates, fixed the timing, and kept <strong>mouse and keyboard as fallbacks.</strong></p>
-                <p class="d-not"><span class="verdict try">Instead of</span><s>Tuning it on one fast machine</s></p>
-              </div>
-              <figure class="d-shot"><img src="images/gesture/experience.jpg" alt="Experience page" loading="lazy" /></figure>
-            </div>
-          </div>
-        </section>
-        <section class="block reveal">
-          <div class="mono"><b>Impact</b>Results</div>
-          <div>
-            <div class="impact"><div><b>2–4 fps</b><span>is now enough for a gesture</span></div><div><b>0</b><span>servers, all in-browser</span></div><div><b>3</b><span>ways in: hand, mouse, keys</span></div></div>
-            <p class="lead" style="margin-top: 22px"><strong>It taught me to design for input that is wrong some of the time, which is true of every camera, microphone and model.</strong></p>
-            <p class="note">No analytics on this site. The fix was verified in a simulation, not yet on a real slow laptop.</p>
           </div>
         </section>
         <section class="block reveal" style="border-bottom: 0">
-          <div class="mono"><b>Reflection</b>What I learned</div>
+          <div class="mono"><b>Impact</b>Results</div>
           <div>
-            <p class="lead"><strong>I tested it on the best computer it would ever run on.</strong> Now I slow things down on purpose before anyone else opens them.</p>
+            <div class="impact"><div><b>3</b><span>ways in</span></div><div><b>0</b><span>servers, all in-browser</span></div><div><b>2–4 fps</b><span>is enough to work</span></div></div>
+            <p class="note">Obstacle: it first failed on slower laptops. I fixed the timing so it runs on modest hardware. Not yet tested with assistive-technology users.</p>
           </div>
         </section>
 
         <aside class="takeaway reveal">
           <div class="mono">Key takeaway</div>
-          <h2>I design for the slowest laptop in the room.</h2>
-          <p>Ambitious interaction only counts if it holds up on someone else's machine, with a fallback for the people it doesn't reach.</p>
+          <h2>Accessible means more than one way in.</h2>
         </aside>
       </div>
     </main>
